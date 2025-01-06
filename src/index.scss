@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap");
+
+//Sass variables
+$background-color: linear-gradient(259.93deg, #000000 -41.68%, #00171f 146.85%);
+$primary-text-color: #ffffff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Archivo", sans-serif;
+    background: $background-color;
+    color: $primary-text-color;
+}
