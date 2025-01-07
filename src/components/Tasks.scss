@@ -2,7 +2,7 @@
     padding: 60px 85px;
     display: flex;
     flex-direction: column;
-    max-width: 40%;
+    max-width: 60%;
     padding-top: 50px;
 
     height: 100vh;
@@ -12,6 +12,7 @@
     }
     h3 {
         font-size: 18px;
+        margin-bottom: 24px;
     }
 }
 
@@ -29,8 +30,4 @@
 .completed-tasks {
     flex: 1;
     margin-top: 28px;
-
-    div {
-        margin-top: 28px;
-    }
 }
