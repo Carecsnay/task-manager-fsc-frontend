@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 
 import "./AddTask.scss";
 
@@ -15,7 +16,9 @@ const AddTask = () => {
     return (
         <div className="add-task-container">
             <CustomInput label="Adicionar tarefa..." value={taskDescription} onChange={onChange} />
-            <CustomButton>+</CustomButton>
+            <CustomButton>
+                <FaPlus fontSize={14} color="#ffffff" />
+            </CustomButton>
         </div>
     );
 };
