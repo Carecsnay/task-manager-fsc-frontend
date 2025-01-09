@@ -34,7 +34,7 @@ function Tasks() {
                     {tasks
                         .filter((task) => task.isCompleted === false)
                         .map((tasksNotCompleted) => (
-                            <TaskItem task={tasksNotCompleted} />
+                            <TaskItem task={tasksNotCompleted} fetchTasks={fetchTasks} />
                         ))}
                 </div>
             </div>
@@ -44,7 +44,7 @@ function Tasks() {
                     {tasks
                         .filter((task) => task.isCompleted) //mesmo que colocar task.isCompleted === true
                         .map((completedTask) => (
-                            <TaskItem task={completedTask} />
+                            <TaskItem task={completedTask} fetchTasks={fetchTasks} />
                         ))}
                 </div>
             </div>

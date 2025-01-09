@@ -4,11 +4,14 @@ import { toast } from "react-toastify";
 
 import "./TaskItem.scss";
 
-const TaskItem = ({ task }) => {
+const TaskItem = ({ task, fetchTasks }) => {
     const handleTaskDeletion = async () => {
         try {
             await axios.delete(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`);
-            
+
+            await fetchTasks();
+
+            return toast.success("Tarefa excluída com sucesso!");
         } catch (error) {
             toast.error("Não foi possível excluir a tarefa!");
         }
