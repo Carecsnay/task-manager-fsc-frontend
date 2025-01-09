@@ -7,8 +7,9 @@ import "./AddTask.scss";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
 import axios from "axios";
+// a prop fetch serve para atualizar as tarefas novas atualizadas.
 
-const AddTask = () => {
+const AddTask = ({ fetchTasks }) => {
     const [taskDescription, setTaskDescription] = useState("");
 
     const onChange = (e) => {
@@ -21,10 +22,13 @@ const AddTask = () => {
                 toast.error("A tarefa precisa de uma descrição para ser adicionada!");
             } else {
                 toast.success("A tarefa foi adicionada com sucesso!");
-                return await axios.post("https://task-manager-fsc-backend.onrender.com/tasks", {
+                await axios.post("https://task-manager-fsc-backend.onrender.com/tasks", {
                     description: taskDescription,
                     isCompleted: false,
                 });
+                await fetchTasks();
+                    setTaskDescription("");
+                return;
             }
         } catch (error) {
             console.log(error);
