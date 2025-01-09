@@ -1,7 +1,7 @@
 //Import de bibliotecas
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, Bounce } from 'react-toastify';
 
 //Import de arquivos
 import "./index.scss";
@@ -13,8 +13,20 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-            <App />
-            <ToastContainer />
+        <ToastContainer
+            position="bottom-center"
+            autoClose={2500}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+            transition={Bounce}
+        />
+        <App />
     </React.StrictMode>
 );
 

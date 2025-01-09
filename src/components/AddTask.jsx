@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
 import "./AddTask.scss";
 
@@ -17,7 +17,9 @@ const AddTask = () => {
     const handleTaskAddition = () => {
         try {
             if (taskDescription.length === 0) {
-                return toast.error("Teste");
+                return toast.error("A tarefa precisa de uma descrição para ser adicionada!");
+            } else {
+                return toast.success("A tarefa foi adicionada com sucesso!");
             }
         } catch (error) {
             console.log(error);
