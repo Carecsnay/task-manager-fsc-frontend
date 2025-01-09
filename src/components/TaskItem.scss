@@ -17,6 +17,12 @@
     }
 }
 
+.tasks-list {
+    overflow-y: auto;
+    scrollbar-width: thin; /* Para navegadores que suportam */
+    scrollbar-color: #444444 #1e1e1e; /* Cor do scroll e do fundo */
+}
+
 /* Customize the label (the container) */
 .checkbox-container {
     display: block;
