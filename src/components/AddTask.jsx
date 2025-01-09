@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa";
-import { Axios } from "axios";
-import { useAlert } from "react-alert";
+import { toast } from 'react-toastify';
 
 import "./AddTask.scss";
 
@@ -11,7 +10,6 @@ import CustomButton from "./CustomButton";
 const AddTask = () => {
     const [taskDescription, setTaskDescription] = useState("");
 
-    const alert = useAlert();
     const onChange = (e) => {
         setTaskDescription(e.target.value);
     };
@@ -19,7 +17,7 @@ const AddTask = () => {
     const handleTaskAddition = () => {
         try {
             if (taskDescription.length === 0) {
-                return alert.error("Teste");
+                return toast.error("Teste");
             }
         } catch (error) {
             console.log(error);
