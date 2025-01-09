@@ -6,6 +6,7 @@ import "./AddTask.scss";
 
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
+import axios from "axios";
 
 const AddTask = () => {
     const [taskDescription, setTaskDescription] = useState("");
@@ -14,12 +15,16 @@ const AddTask = () => {
         setTaskDescription(e.target.value);
     };
 
-    const handleTaskAddition = () => {
+    const handleTaskAddition = async () => {
         try {
             if (taskDescription.length === 0) {
-                return toast.error("A tarefa precisa de uma descrição para ser adicionada!");
+                toast.error("A tarefa precisa de uma descrição para ser adicionada!");
             } else {
-                return toast.success("A tarefa foi adicionada com sucesso!");
+                toast.success("A tarefa foi adicionada com sucesso!");
+                return await axios.post("https://task-manager-fsc-backend.onrender.com/tasks", {
+                    description: taskDescription,
+                    isCompleted: false,
+                });
             }
         } catch (error) {
             console.log(error);

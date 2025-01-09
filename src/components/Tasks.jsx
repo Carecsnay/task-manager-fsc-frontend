@@ -15,7 +15,6 @@ function Tasks() {
         try {
             const { data } = await axios.get("https://task-manager-fsc-backend.onrender.com/tasks"); //pegando tarefas da nossa API
             setTasks(data); //setando tarefas no estado!
-            console.log(data);
         } catch (error) {
             console.log(error);
         }
