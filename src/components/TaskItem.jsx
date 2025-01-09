@@ -1,8 +1,19 @@
 import { AiFillDelete } from "react-icons/ai";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 import "./TaskItem.scss";
 
 const TaskItem = ({ task }) => {
+    const handleTaskDeletion = async () => {
+        try {
+            await axios.delete(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`);
+            
+        } catch (error) {
+            toast.error("Não foi possível excluir a tarefa!");
+        }
+    };
+
     return (
         <>
             <div className="task-item-container">
@@ -15,7 +26,7 @@ const TaskItem = ({ task }) => {
                 </div>
 
                 <div className="delete">
-                    <AiFillDelete size={18} color="#F97474" />
+                    <AiFillDelete size={18} color="#F97474" onClick={handleTaskDeletion} />
                 </div>
             </div>
         </>
