@@ -1,7 +1,7 @@
 //Import de bibliotecas
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ToastContainer, Bounce } from 'react-toastify';
+import { ToastContainer, Zoom } from 'react-toastify';
 
 //Import de arquivos
 import "./index.scss";
@@ -24,7 +24,7 @@ root.render(
             draggable
             pauseOnHover
             theme="dark"
-            transition={Bounce}
+            transition={Zoom}
         />
         <App />
     </React.StrictMode>
