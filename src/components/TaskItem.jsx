@@ -17,13 +17,30 @@ const TaskItem = ({ task, fetchTasks }) => {
         }
     };
 
+    const handleTaskCompletionTask = async (e) => {
+        try {
+            await axios.patch(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`, {
+                isCompleted: e.target.checked,
+            });
+
+            await fetchTasks();
+            return toast.success("Status da tarefa foi modificado!");
+        } catch (error) {
+            toast.error("Não foi possível mudar o status da tarefa!");
+        }
+    };
+
     return (
         <>
             <div className="task-item-container">
                 <div className="task-description">
                     <label className={task.isCompleted ? "checkbox-container-completed" : "checkbox-container"}>
                         {task.description}
-                        <input type="checkbox" defaultChecked={task.isCompleted} />
+                        <input
+                            type="checkbox"
+                            defaultChecked={task.isCompleted}
+                            onChange={(e) => handleTaskCompletionTask(e)} //recebe o isCompleted da handleTaskCompletionTask (true/false)
+                        />
                         <span className={task.isCompleted ? "checkmark completed" : "checkmark"}></span>
                     </label>
                 </div>
