@@ -30,13 +30,18 @@ const AddTask = ({ fetchTasks }) => {
                 return toast.success("A tarefa foi adicionada com sucesso!");
             }
         } catch (error) {
-            console.log(error);
+            return toast.error("A tarefa não foi adicionada!");
         }
     };
 
     return (
         <div className="add-task-container">
-            <CustomInput label="Adicionar tarefa..." value={taskDescription} onChange={onChange} />
+            <CustomInput
+                label="Adicionar tarefa..."
+                value={taskDescription}
+                onChange={onChange}
+                onEnterPress={handleTaskAddition}
+            />
             <CustomButton onClick={handleTaskAddition}>
                 <FaPlus fontSize={14} color="#ffffff" /> {/*Children do CustomButton*/}
             </CustomButton>
