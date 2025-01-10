@@ -1,10 +1,13 @@
+import "./App.scss";
+import SideBar from "./components/SideBar";
 import Tasks from "./components/Tasks";
 
 function App() {
     return (
-        <>
-            <Tasks/>
-        </>
+        <div className="app-container">
+            <SideBar />
+            <Tasks />
+        </div>
     );
 }
 
