@@ -5,7 +5,7 @@ import logo from "../assets/images/logo.png";
 
 const SideBar = () => {
     return (
-        <div className="sidebar-GoContainer">
+        <div className="sidebar-container">
             <div className="logo">
                 <img src={logo} alt="logo da full stack club" />
             </div>
