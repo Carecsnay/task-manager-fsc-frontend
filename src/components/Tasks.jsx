@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import "./Tasks.scss";
 import TaskItem from "./TaskItem";
 import AddTask from "./AddTask";
+import { toast } from "react-toastify";
 
 function Tasks() {
     const [tasks, setTasks] = useState([{}]);
@@ -15,8 +16,8 @@ function Tasks() {
         try {
             const { data } = await axios.get("https://task-manager-fsc-backend.onrender.com/tasks"); //pegando tarefas da nossa API
             setTasks(data); //setando tarefas no estado!
-        } catch (error) {
-            console.log(error);
+        } catch (_error) {
+            console.log("...");
         }
     };
 
