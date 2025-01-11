@@ -1,12 +1,7 @@
 .task-item-container {
     display: flex;
     justify-content: space-between;
-    max-width: 50%;
-
-    @media (max-width: 768px) {
-        max-width: 90%;
-    }
-
+    max-width: 90%;
     .delete {
         padding-top: 1.5px;
         margin-left: 18px;
@@ -15,12 +10,6 @@
             cursor: pointer;
         }
     }
-}
-
-.tasks-list {
-    overflow-y: auto;
-    scrollbar-width: thin; /* Para navegadores que suportam */
-    scrollbar-color: #444444 #1e1e1e; /* Cor do scroll e do fundo */
 }
 
 /* Customize the label (the container) */

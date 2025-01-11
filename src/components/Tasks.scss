@@ -1,32 +1,42 @@
 .tasks-container {
-    padding: 60px 85px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    max-width: 40%;
+    max-width: 90%;
     padding-top: 50px;
 
     height: 100vh;
 
     h2 {
+        font-size: 26px;
         margin-bottom: 24px;
     }
     h3 {
-        font-size: 18px;
-        margin-bottom: 24px;
+        font-size: 20px;
+        margin-bottom: 16px;
     }
 }
-
-.last-tasks {
+@media (max-width: 390px) {
+    .tasks-container {
+        margin: auto;
+    }
+}
+.last-tasks, .completed-tasks {
     display: flex;
     flex: 1;
     overflow-y: hidden;
     flex-direction: column;
-
-    .tasks-list {
-        margin-top: 28px;
-    }
 }
-
 .completed-tasks {
     margin-top: 28px;
+}
+
+.tasks-list {
+    margin-top: 28px;
+}
+
+.tasks-list {
+    overflow-y: auto;
+    scrollbar-width: thin; /* Para navegadores que suportam */
+    scrollbar-color: #444444 #1e1e1e; /* Cor do scroll e do fundo */
 }

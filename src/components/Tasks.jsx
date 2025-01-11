@@ -40,7 +40,7 @@ function Tasks() {
             </div>
             <div className="completed-tasks">
                 <h3>Tarefas concluídas</h3>
-                <div>
+                <div className="tasks-list">
                     {tasks
                         .filter((task) => task.isCompleted) //mesmo que colocar task.isCompleted === true
                         .map((completedTask) => (
