@@ -1,7 +1,7 @@
 //Import de bibliotecas
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ToastContainer, Zoom } from 'react-toastify';
+import { ToastContainer, Zoom } from "react-toastify";
 
 //Import de arquivos
 import "./index.scss";
@@ -16,12 +16,7 @@ root.render(
         <ToastContainer
             position="bottom-center"
             autoClose={2500}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick={false}
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
+            limit={1}
             pauseOnHover
             theme="dark"
             transition={Zoom}
