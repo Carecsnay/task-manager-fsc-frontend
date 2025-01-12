@@ -17,7 +17,7 @@ function Tasks() {
             const { data } = await axios.get("https://task-manager-fsc-backend.onrender.com/tasks"); //pegando tarefas da nossa API
             setTasks(data); //setando tarefas no estado!
         } catch (_error) {
-            console.log("...");
+            toast.error("Não foi possível recuperar as tarefas no momento, tente novamente mais tarde!");
         }
     };
 
@@ -35,7 +35,7 @@ function Tasks() {
                     {tasks
                         .filter((task) => task.isCompleted === false)
                         .map((tasksNotCompleted) => (
-                            <TaskItem task={tasksNotCompleted} fetchTasks={fetchTasks} />
+                            <TaskItem key={tasksNotCompleted._id} task={tasksNotCompleted} fetchTasks={fetchTasks} />
                         ))}
                 </div>
             </div>
@@ -45,7 +45,7 @@ function Tasks() {
                     {tasks
                         .filter((task) => task.isCompleted) //mesmo que colocar task.isCompleted === true
                         .map((completedTask) => (
-                            <TaskItem task={completedTask} fetchTasks={fetchTasks} />
+                            <TaskItem key={completedTask._id} task={completedTask} fetchTasks={fetchTasks} />
                         ))}
                 </div>
             </div>
