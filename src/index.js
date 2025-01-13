@@ -2,6 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { ToastContainer, Zoom } from "react-toastify";
+import { BrowserRouter } from "react-router-dom";
 
 //Import de arquivos
 import "./index.scss";
@@ -13,15 +14,17 @@ import reportWebVitals from "./reportWebVitals";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
-        <ToastContainer
-            position="bottom-center"
-            autoClose={2500}
-            limit={1}
-            pauseOnHover
-            theme="dark"
-            transition={Zoom}
-        />
-        <App />
+        <BrowserRouter>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={2500}
+                limit={1}
+                pauseOnHover
+                theme="dark"
+                transition={Zoom}
+            />
+            <App />
+        </BrowserRouter>
     </React.StrictMode>
 );
 
