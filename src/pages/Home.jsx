@@ -1,14 +1,14 @@
-import SideBar from "../components/SideBar";
-import Tasks from "../components/Tasks";
+import SideBar from '../components/SideBar'
+import Tasks from '../components/Tasks'
 
-import "./Home.scss";
+import './Home.scss'
 const Home = () => {
-    return (
+  return (
         <div className="home-container">
             <SideBar />
             <Tasks />
         </div>
-    );
-};
+  )
+}
 
-export default Home;
+export default Home

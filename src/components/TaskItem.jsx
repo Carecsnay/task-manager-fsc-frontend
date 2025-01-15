@@ -1,47 +1,47 @@
-import { AiFillDelete } from "react-icons/ai";
-import axios from "axios";
-import { toast } from "react-toastify";
+import { AiFillDelete } from 'react-icons/ai'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
-import "./TaskItem.scss";
+import './TaskItem.scss'
 
 const TaskItem = ({ task, fetchTasks }) => {
-    const handleTaskDeletion = async () => {
-        try {
-            await axios.delete(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`);
+  const handleTaskDeletion = async () => {
+    try {
+      await axios.delete(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`)
 
-            await fetchTasks();
+      await fetchTasks()
 
-            return toast.success("Tarefa excluída com sucesso!");
-        } catch (_error) {
-            toast.error("Não foi possível excluir a tarefa!");
-        }
-    };
+      return toast.success('Tarefa excluída com sucesso!')
+    } catch (_error) {
+      toast.error('Não foi possível excluir a tarefa!')
+    }
+  }
 
-    const handleTaskCompletionTask = async (e) => {
-        try {
-            await axios.patch(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`, {
-                isCompleted: e.target.checked,
-            });
+  const handleTaskCompletionTask = async (e) => {
+    try {
+      await axios.patch(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`, {
+        isCompleted: e.target.checked
+      })
 
-            await fetchTasks();
-            return toast.success("Status da tarefa foi modificado!");
-        } catch (_error) {
-            toast.error("Não foi possível mudar o status da tarefa!");
-        }
-    };
+      await fetchTasks()
+      return toast.success('Status da tarefa foi modificado!')
+    } catch (_error) {
+      toast.error('Não foi possível mudar o status da tarefa!')
+    }
+  }
 
-    return (
+  return (
         <>
             <div className="task-item-container">
                 <div className="task-description">
-                    <label className={task.isCompleted ? "checkbox-container-completed" : "checkbox-container"}>
+                    <label className={task.isCompleted ? 'checkbox-container-completed' : 'checkbox-container'}>
                         {task.description}
                         <input
                             type="checkbox"
                             defaultChecked={task.isCompleted}
-                            onChange={(e) => handleTaskCompletionTask(e)} //recebe o isCompleted da handleTaskCompletionTask (true/false)
+                            onChange={(e) => handleTaskCompletionTask(e)} // recebe o isCompleted da handleTaskCompletionTask (true/false)
                         />
-                        <span className={task.isCompleted ? "checkmark completed" : "checkmark"}></span>
+                        <span className={task.isCompleted ? 'checkmark completed' : 'checkmark'}></span>
                     </label>
                 </div>
 
@@ -50,6 +50,6 @@ const TaskItem = ({ task, fetchTasks }) => {
                 </div>
             </div>
         </>
-    );
-};
-export default TaskItem;
+  )
+}
+export default TaskItem
