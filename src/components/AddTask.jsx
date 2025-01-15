@@ -21,13 +21,10 @@ const AddTask = ({ fetchTasks }) => {
       if (taskDescription.length === 0) {
         toast.error('A tarefa precisa de uma descrição para ser adicionada!')
       } else {
-        await axios.post(
-          'https://task-manager-fsc-backend.onrender.com/tasks',
-          {
-            description: taskDescription,
-            isCompleted: false
-          }
-        )
+        await axios.post(`${process.env.API_REMOTE_URL}/tasks`, {
+          description: taskDescription,
+          isCompleted: false
+        })
         await fetchTasks()
         setTaskDescription('')
         return toast.success('A tarefa foi adicionada com sucesso!')

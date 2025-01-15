@@ -7,7 +7,7 @@ import './TaskItem.scss'
 const TaskItem = ({ task, fetchTasks }) => {
   const handleTaskDeletion = async () => {
     try {
-      await axios.delete(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`)
+      await axios.delete(`${process.env.API_REMOTE_URL}/tasks/${task._id}`)
 
       await fetchTasks()
 
@@ -19,7 +19,7 @@ const TaskItem = ({ task, fetchTasks }) => {
 
   const handleTaskCompletionTask = async (e) => {
     try {
-      await axios.patch(`https://task-manager-fsc-backend.onrender.com/tasks/${task._id}`, {
+      await axios.patch(`${process.env.API_REMOTE_URL}/tasks/${task._id}`, {
         isCompleted: e.target.checked
       })
 

@@ -14,10 +14,12 @@ function Tasks () {
   // Pegando tarefas do BD. O UseCallback é semelhante ao useMemo, a diferença é que ele guarda uma função em memória e só atualiza quando o array de dependência é alterado.
   const fetchTasks = useCallback(async () => {
     try {
-      const { data } = await axios.get('https://task-manager-fsc-backend.onrender.com/tasks') // pegando tarefas da nossa API
+      const { data } = await axios.get(`${process.env.API_REMOTE_URL}/tasks`) // pegando tarefas da nossa API
       setTasks(data) // setando tarefas no estado!
     } catch (_error) {
-      toast.error('Não foi possível recuperar as tarefas no momento, tente novamente mais tarde!')
+      toast.error(
+        'Não foi possível recuperar as tarefas no momento, tente novamente mais tarde!'
+      )
     }
   }, [])
 
@@ -36,26 +38,34 @@ function Tasks () {
   }, [tasks])
 
   return (
-        <div className="tasks-container">
-            <h2>Minhas tarefas</h2>
-            <div className="last-tasks">
-                <h3>Últimas tarefas</h3>
-                <AddTask fetchTasks={fetchTasks} />
-                <div className="tasks-list">
-                    {lastTask.map((tasksNotCompleted) => (
-                        <TaskItem key={tasksNotCompleted._id} task={tasksNotCompleted} fetchTasks={fetchTasks} />
-                    ))}
-                </div>
-            </div>
-            <div className="completed-tasks">
-                <h3>Tarefas concluídas</h3>
-                <div className="tasks-list">
-                    {completedTasks.map((completedTask) => (
-                        <TaskItem key={completedTask._id} task={completedTask} fetchTasks={fetchTasks} />
-                    ))}
-                </div>
-            </div>
+    <div className='tasks-container'>
+      <h2>Minhas tarefas</h2>
+      <div className='last-tasks'>
+        <h3>Últimas tarefas</h3>
+        <AddTask fetchTasks={fetchTasks} />
+        <div className='tasks-list'>
+          {lastTask.map((tasksNotCompleted) => (
+            <TaskItem
+              key={tasksNotCompleted._id}
+              task={tasksNotCompleted}
+              fetchTasks={fetchTasks}
+            />
+          ))}
         </div>
+      </div>
+      <div className='completed-tasks'>
+        <h3>Tarefas concluídas</h3>
+        <div className='tasks-list'>
+          {completedTasks.map((completedTask) => (
+            <TaskItem
+              key={completedTask._id}
+              task={completedTask}
+              fetchTasks={fetchTasks}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }
 
