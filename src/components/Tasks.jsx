@@ -14,7 +14,10 @@ function Tasks () {
   // Pegando tarefas do BD. O UseCallback é semelhante ao useMemo, a diferença é que ele guarda uma função em memória e só atualiza quando o array de dependência é alterado.
   const fetchTasks = useCallback(async () => {
     try {
-      const { data } = await axios.get(`${process.env.API_REMOTE_URL}/tasks`) // pegando tarefas da nossa API
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_API_REMOTE_URL}/tasks`
+      )
+      // pegando tarefas da nossa API
       setTasks(data) // setando tarefas no estado!
     } catch (_error) {
       toast.error(

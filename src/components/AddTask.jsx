@@ -21,7 +21,7 @@ const AddTask = ({ fetchTasks }) => {
       if (taskDescription.length === 0) {
         toast.error('A tarefa precisa de uma descrição para ser adicionada!')
       } else {
-        await axios.post(`${process.env.API_REMOTE_URL}/tasks`, {
+        await axios.post(`${process.env.REACT_APP_API_REMOTE_URL}/tasks`, {
           description: taskDescription,
           isCompleted: false
         })

@@ -7,7 +7,9 @@ import './TaskItem.scss'
 const TaskItem = ({ task, fetchTasks }) => {
   const handleTaskDeletion = async () => {
     try {
-      await axios.delete(`${process.env.API_REMOTE_URL}/tasks/${task._id}`)
+      await axios.delete(
+        `${process.env.REACT_APP_API_REMOTE_URL}/tasks/${task._id}`
+      )
 
       await fetchTasks()
 
@@ -19,9 +21,12 @@ const TaskItem = ({ task, fetchTasks }) => {
 
   const handleTaskCompletionTask = async (e) => {
     try {
-      await axios.patch(`${process.env.API_REMOTE_URL}/tasks/${task._id}`, {
-        isCompleted: e.target.checked
-      })
+      await axios.patch(
+        `${process.env.REACT_APP_API_REMOTE_URL}/tasks/${task._id}`,
+        {
+          isCompleted: e.target.checked
+        }
+      )
 
       await fetchTasks()
       return toast.success('Status da tarefa foi modificado!')
@@ -31,25 +36,37 @@ const TaskItem = ({ task, fetchTasks }) => {
   }
 
   return (
-        <>
-            <div className="task-item-container">
-                <div className="task-description">
-                    <label className={task.isCompleted ? 'checkbox-container-completed' : 'checkbox-container'}>
-                        {task.description}
-                        <input
-                            type="checkbox"
-                            defaultChecked={task.isCompleted}
-                            onChange={(e) => handleTaskCompletionTask(e)} // recebe o isCompleted da handleTaskCompletionTask (true/false)
-                        />
-                        <span className={task.isCompleted ? 'checkmark completed' : 'checkmark'}></span>
-                    </label>
-                </div>
+    <>
+      <div className='task-item-container'>
+        <div className='task-description'>
+          <label
+            className={
+              task.isCompleted
+                ? 'checkbox-container-completed'
+                : 'checkbox-container'
+            }
+          >
+            {task.description}
+            <input
+              type='checkbox'
+              defaultChecked={task.isCompleted}
+              onChange={(e) => handleTaskCompletionTask(e)} // recebe o isCompleted da handleTaskCompletionTask (true/false)
+            />
+            <span
+              className={task.isCompleted ? 'checkmark completed' : 'checkmark'}
+            ></span>
+          </label>
+        </div>
 
-                <div className="delete">
-                    <AiFillDelete size={18} color="#F97474" onClick={handleTaskDeletion} />
-                </div>
-            </div>
-        </>
+        <div className='delete'>
+          <AiFillDelete
+            size={18}
+            color='#F97474'
+            onClick={handleTaskDeletion}
+          />
+        </div>
+      </div>
+    </>
   )
 }
 export default TaskItem
