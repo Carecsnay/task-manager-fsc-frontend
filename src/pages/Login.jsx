@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   const handleSingInClick = () => {
-    navigate('/')
+    navigate('/tasks')
   }
 
   return (
