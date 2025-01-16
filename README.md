@@ -1,70 +1,49 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Task Manager Frontend
 
-## Available Scripts
+Este é o frontend da nossa aplicação **Task Manager**, que se conecta ao backend da aplicação **Task Manager Backend**. A aplicação tem como objetivo gerenciar tarefas, permitindo que os usuários adicionem, editem e excluam suas tarefas, além de marcar tarefas como concluídas.
 
-In the project directory, you can run:
+## Deploy
 
-### `npm start`
+Acesse o projeto em funcionamento através do seguinte link:  
+[Task Manager Frontend](https://task-manager-fsc-frontend-nrne5tccq-carecsnays-projects.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias Utilizadas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **ReactJS**: Biblioteca JavaScript para construir interfaces de usuário dinâmicas.
+- **React Router**: Para navegação entre páginas da aplicação.
+- **Axios**: Para fazer requisições HTTP ao backend.
+- **React Toastify**: Para exibir notificações de feedback para o usuário.
+- **Sass/SCSS**: Pré-processador CSS utilizado para facilitar a estilização da aplicação.
+- **React Icons**: Para ícones interativos na interface.
+- **Font Awesome**: Ícones personalizados usados em diversos componentes da aplicação.
+- **Babel**: Transpiler utilizado para garantir a compatibilidade com navegadores mais antigos.
+- **ESLint**: Para garantir a qualidade e consistência do código.
+- **Husky**: Para executar hooks de pré-commit e garantir que os commits sigam as boas práticas.
+- **Lint-Staged**: Para rodar o lint apenas nos arquivos que foram alterados antes do commit.
 
-### `npm test`
+## Funcionalidades
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Adicionar Tarefas**: Permite adicionar novas tarefas à lista.
+- **Marcar Tarefas como Concluídas**: Ao marcar uma tarefa como concluída, a tarefa é atualizada na interface.
+- **Excluir Tarefas**: As tarefas podem ser removidas da lista.
+- **Armazenamento Local**: Utiliza a API para armazenar as tarefas no backend.
+- **Feedback do Usuário**: Utiliza o **React Toastify** para mostrar mensagens de sucesso ou erro ao usuário.
+- **Design Responsivo**: A interface adapta-se a diferentes tamanhos de tela, proporcionando uma boa experiência em dispositivos móveis e desktop.
 
-### `npm run build`
+## Personalização
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Tarefas**: A descrição das tarefas pode ser personalizada na interface de adição.
+- **Tema**: O tema da aplicação utiliza um gradiente escuro no fundo, com um design moderno. Os botões e campos de input são estilizados para uma melhor experiência.
+- **Fontes**: Utiliza a fonte "Archivo" para textos, criando uma aparência clean e legível.
+- **Cor do Scroll**: O scroll da lista de tarefas é customizado para proporcionar um visual mais clean.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Captura de Tela
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Imagem da aplicação](url-da-imagem-da-captura-de-tela.png)
 
-### `npm run eject`
+## Autor
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Este projeto foi desenvolvido no âmbito da Full Stack Club, uma escola de programação, onde sou aluno da trilha REACTPRO.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Desenvolvido com dedicação por **Bruno Benicio**.
