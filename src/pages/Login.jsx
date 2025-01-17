@@ -13,7 +13,7 @@ const Login = () => {
 
   return (
         <div className="login-container">
-            <img src={logo} alt="Logo da Full Stack Club" />
+            <img className='logo' src={logo} alt="Logo da Full Stack Club" />
             <div className="button-container">
                 <CustomButton onClick={handleSingInClick}>Entrar</CustomButton>
             </div>
