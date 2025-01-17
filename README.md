@@ -6,7 +6,7 @@ Este é o frontend da nossa aplicação **Task Manager**, que se conecta ao back
 ## Deploy
 
 Acesse o projeto em funcionamento através do seguinte link:  
-[Task Manager Frontend](https://task-manager-fsc-frontend-nrne5tccq-carecsnays-projects.vercel.app/)
+[Task Manager Frontend](https://task-manager-fsc-frontend.vercel.app/)
 
 ## Tecnologias Utilizadas
 
@@ -40,7 +40,8 @@ Acesse o projeto em funcionamento através do seguinte link:
 
 ## Captura de Tela
 
-![Imagem da aplicação](url-da-imagem-da-captura-de-tela.png)
+![Doc1](https://github.com/user-attachments/assets/83b1834c-c1f0-4f5e-ab7d-80652ad71e33)
+
 
 ## Autor
 
